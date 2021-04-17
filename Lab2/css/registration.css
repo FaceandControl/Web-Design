@@ -102,6 +102,42 @@ input:focus {
     animation-fill-mode: forwards;
 }
 
+.errorMessage {
+    width: 100%;
+    background: #ffffff;
+    border: 2px solid #ff4d4d;
+    font-size: 14px;
+    line-height: 16px;
+    height: 45px;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 13px;
+    font-weight: 500;
+    font-size: 18px;
+    color: 	#1a8cff;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.errorAnimation {
+    animation-name: errorAnimation;
+    animation-duration: 1s;
+    border-color: #ff4d4d;
+}
+
+@keyframes errorAnimation {
+  from {border-color: white;}
+  to {border-color: #ff4d4d;}
+  
+}
+.alarmIcon {
+    width: 16px;
+    height: 16px;
+    fill: red;
+    margin: 0 20px;
+}
+
 @keyframes fadeForm {
     0% {
         opacity: 0;
@@ -127,6 +163,7 @@ input:focus {
     line-height: 23px;
     text-align: center;
     margin-bottom: 38px;
+    
 }
 
 .form-field {
@@ -179,7 +216,21 @@ a.button {
 
 .btn-primary  {
     background-color: #7d7de8 !important;
+    border: 0 !important;
+    outline: none !important;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-check:checked {
     background-color: #0d6cf2 !important;
+}
+
+.input-container {
+    margin-bottom: 13px;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
 }

@@ -12,37 +12,42 @@
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <link href="../bootstrap/bootstrap.css" rel="stylesheet">
     <link rel="shortcut icon" href="../resources/favicon.ico"/>
+    <script defer src="../scripts/registration.js"></script>
 </head>
 <body>
     <main>
         <div class="circle"></div>
         <div class="register-form-container">
-            <div class="logo-container">
-                <img class="logo-img" src="../resources/logo.png" alt="Logo">
+            <div id="header-registration-container">
+                <div class="logo-container">
+                    <img class="logo-img" src="../resources/logo.png" alt="Logo">
+                </div>
+                <h1 class="form-title">
+                    Sing Up
+                </h1>
             </div>
-            <h1 class="form-title">
-                Sing Up
-            </h1>
             <div class="form-fields">
                 <div class="form-field">
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="registration-email" placeholder="Email">
                 </div>
                 <div class="form-field">
-                        <input type="text" placeholder="Name">
+                        <input type="text" id="registration-name" placeholder="Name">
                 </div>
-                <div class="form-row text-center btn-block">
-                    <button type="button" class="btn btn-primary ">Male</button>
-                    <button type="button" class="btn btn-primary ">Female</button>
+                <div class="input-container">
+                    <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked/>
+                    <label class="btn btn-primary" for="option1">Male</label>
+                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+                    <label class="btn btn-primary" for="option2">Female</label>
                 </div>
                 <div class="form-field">
-                        <input type="text" placeholder="Password">
+                        <input type="password" id="registration-first-password" placeholder="Password">
                 </div>
                 <div class="form-field">
-                        <input type="text" placeholder="Confirm Password">
+                        <input type="password" id="registration-second-password" placeholder="Confirm Password">
                 </div>
             </div>
             <div class="form-buttons">
-                <a href="index.html" class="button">Create</a>
+                <a class="button" id="registration-button">Create</a>
                 <div class="divider">or</div>
                 <a href="sign-in.html" class="button">I already have account</a>
             </div>

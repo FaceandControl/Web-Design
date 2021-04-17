@@ -8,10 +8,13 @@
     <link rel="shortcut icon" href="../resources/favicon.ico"/>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <script defer src="../scripts/photosManipulation.js"></script>
     <title>Home</title>
 </head>
     <body>
@@ -31,30 +34,116 @@
         <div class="content">
             <h2 class="phrase">Ready to take a view?</h2>
             <hr/>
+            <div class='wrapper text-center'>
+                <div class="btn-group btn-group-lg select-view" role="group">
+                    <button type="button" id="one-row" class="btn btn-primary">
+                        <div class="button-row">
+                            <img src="../resources/imageIcon.png">
+                        </div>
+                    </button>
+                    <button type="button" id="two-rows" class="btn btn-primary">
+                        <div class="button-row">
+                            <img src="../resources/imageIcon.png">
+                            <img src="../resources/imageIcon.png">
+                        </div>
+                    </button>
+                    <button type="button" id="three-rows" class="btn btn-primary">
+                        <div class="button-row">
+                            <img src="../resources/imageIcon.png">
+                            <img src="../resources/imageIcon.png">
+                            <img src="../resources/imageIcon.png">
+                        </div>
+                    </button>
+                </div>
+            </div>
             <div class="row">
                 <div class="column">
-                    <img src="../images/wedding.jpg">
-                    <img src="../images/rocks.jpg">
-                    <img src="../images/falls2.jpg">
-                    <img src="../images/paris.jpg">
-                    <img src="../images/nature.jpg">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/falls2.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/bridge.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="column">
-                    <img src="../images/underwater.jpg">
-                    <img src="../images/ocean.jpg">
-                    <img src="../images/wedding.jpg">
-                    <img src="../images/rocks.jpg">
-                    <img src="../images/underwater.jpg">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/mountainskies.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/ocean.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="column">
-                    <img src="../images/wedding.jpg">
-                    <img src="../images/rocks.jpg">
-                    <img src="../images/falls2.jpg">
-                    <img src="../images/paris.jpg">
-                    <img src="../images/nature.jpg">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/sea.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img src="../images/wedding.jpg">
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <ol>
+                                    </ol> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
-</html>
+</html> 
 

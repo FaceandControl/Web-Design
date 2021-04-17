@@ -24,21 +24,19 @@
 }
 
 .column {
-    flex: 25%;
-    max-width: 25%;
+    flex: 33%;
+    max-width: 50%;
     padding: 0 4px;
 }
 
 .column img {
-    margin-top: 8px;
-    vertical-align: middle;
     width: 100%;
 }
 
 @media screen and (max-width: 800px) {
     .column {
-        flex: 40%;
-        max-width: 50%;
+        flex: 50%;
+        max-width: 25%;
     }
     .phrase {
         font-size: 40px;
@@ -53,4 +51,49 @@
     .phrase {
         font-size: 30px;
     }
+}
+
+.select-view button {
+    border: 2px solid black;
+}
+
+.select-view button div {
+    font-size: 25px !important;
+    color: black;
+    background-color: #7d7de8;
+    display: grid;
+    grid-row: 1;
+    grid-gap: 5px;
+    justify-content: center;
+    grid-auto-flow: column;
+    width: 70px;
+}
+
+.wrapper {
+    margin-bottom: 20px;
+}
+
+.button-row {
+    border: 2px solid black !important;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.panel-heading a img {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px !important;
+}
+
+.panel-heading {
+    padding: 0 !important;
+}
+
+.panel-collapse {
+    border-bottom-left-radius: 50px 20px !important;
+    border-bottom-right-radius: 50px 20px !important;
+}
+
+.form-control{
+    margin-bottom: 10px;
 }
