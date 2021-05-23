@@ -1,0 +1,204 @@
+
+<div class="register-form-container row no-gutters">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card text-white bg-dark my-5">
+      <div class="card-header">
+        <h2 class="card-title text-center">Sign up</h2>
+      </div>
+      <form class="card-body" [formGroup]="registerForm" (submit)="onSubmit()">
+
+
+
+        <h5 class="card-title text-center">Account</h5>
+        <div class="form-group">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" placeholder="Enter first name" formControlName="firstName" id="firstName">
+          <span *ngIf="submitted && f.firstName.errors" class="text-danger">
+            <span *ngIf="f.firstName.errors.required">First name is required</span>
+            <span *ngIf="f.firstName.errors.minlength">Min length is 2 symbols</span>
+            <span *ngIf="f.firstName.errors.maxlength">Max length is 20 symbols</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" placeholder="Enter last name" formControlName="lastName" id="lastName">
+          <span *ngIf="submitted && f.lastName.errors" class="text-danger">
+            <span *ngIf="f.lastName.errors.required">Last name is required</span>
+            <span *ngIf="f.lastName.errors.minlength">Min length is 2 symbols</span>
+            <span *ngIf="f.lastName.errors.maxlength">Max length is 20 symbols</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" placeholder="Enter email" formControlName="email" id="email">
+          <span *ngIf="submitted && f.email.errors" class="text-danger">
+            <span *ngIf="f.email.errors.required">Email is required</span>
+            <span *ngIf="f.email.errors.email">Email format is incorrect</span>
+            <span *ngIf="f.email.errors.minlength">Min length is 5 symbols</span>
+            <span *ngIf="f.email.errors.maxlength">Max length is 40 symbols</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" placeholder="Enter password" formControlName="password" id="password">
+          <span *ngIf="submitted && f.password.errors" class="text-danger">
+            <span *ngIf="f.password.errors.required">Password is required</span>
+            <span *ngIf="f.password.errors.minlength">Min length is 4 symbols</span>
+            <span *ngIf="f.password.errors.maxlength">Max length is 20 symbols</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" class="form-control" placeholder="Confirm password" formControlName="confirmPassword" id="confirmPassword">
+          <span *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+            <span *ngIf="f.confirmPassword.errors.required">Password confirmation is required</span>
+            <span *ngIf="f.confirmPassword.errors.minlength">Min length is 4 symbols</span>
+            <span *ngIf="f.confirmPassword.errors.maxlength">Max length is 20 symbols</span>
+            <span *ngIf="f.confirmPassword.errors.mustmatch">Passwords are different</span>
+          </span>
+        </div>
+        <h5 class="card-title text-center">Address</h5>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" class="form-control" placeholder="Country" formControlName="country" id="country">
+          <span *ngIf="submitted && f.country.errors" class="text-danger">
+            <span *ngIf="f.country.errors.required">Country is required</span>
+            <span *ngIf="f.country.errors.minlength">Min length is 2 symbols</span>
+            <span *ngIf="f.country.errors.maxlength">Max length is 20 symbols</span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" placeholder="City" formControlName="city" id="city">
+          <span *ngIf="submitted && f.city.errors" class="text-danger">
+            <span *ngIf="f.city.errors.required">City is required</span>
+            <span *ngIf="f.city.errors.minlength">Min length is 2 symbols</span>
+            <span *ngIf="f.city.errors.maxlength">Max length is 20 symbols</span>
+          </span>
+        </div>
+
+        <h5 class="card-title text-center">Education and job</h5>
+        <div class="custom-control custom-switch">
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="hasSchoolEducation" type="checkbox" class="custom-control-input" id="hasSchoolEducation">
+          <label class="custom-control-label" for="hasSchoolEducation">Has school education</label>
+        </div>
+        <div *ngIf="hasSchoolEducation" class="form-group">
+          <label for="school">School</label>
+          <input type="text" class="form-control" placeholder="School" formControlName="school" id="school">
+          <span *ngIf="submitted && f.school.errors" class="text-danger">
+            <span *ngIf="f.school.errors.maxlength">Max length is 40 symbols</span>
+          </span>
+        </div>
+        <div class="custom-control custom-switch">
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="hasUniversityEducation" type="checkbox" class="custom-control-input" id="hasUniversityEducation">
+          <label class="custom-control-label" for="hasUniversityEducation">Has university education</label>
+        </div>
+        <div *ngIf="hasUniversityEducation" class="form-group">
+          <label for="university">University</label>
+          <input type="text" class="form-control" placeholder="University" formControlName="university" id="university">
+          <span *ngIf="submitted && f.university.errors" class="text-danger">
+            <span *ngIf="f.university.errors.maxlength">Max length is 40 symbols</span>
+          </span>
+        </div>
+        <div *ngIf="hasUniversityEducation" class="form-group">
+          <label for="university">Speciality</label>
+          <input type="text" class="form-control" placeholder="Speciality" formControlName="speciality" id="speciality">
+          <span *ngIf="submitted && f.speciality.errors" class="text-danger">
+            <span *ngIf="f.speciality.errors.maxlength">Max length is 40 symbols</span>
+          </span>
+        </div>
+        <div class="custom-control custom-switch">
+          <input [ngModelOptions]="{standalone: true}" [(ngModel)]="hasJob" type="checkbox" class="custom-control-input" id="hasJob">
+          <label class="custom-control-label" for="hasJob">Has job</label>
+        </div>
+        <div *ngIf="hasJob" class="form-group">
+          <label for="job">Job</label>
+          <input type="text" class="form-control" placeholder="Job" formControlName="job" id="job">
+          <span *ngIf="submitted && f.job.errors" class="text-danger">
+            <span *ngIf="f.job.errors.maxlength">Max length is 40 symbols</span>
+          </span>
+        </div>
+        <button [disabled]="loading" type="submit" class="btn btn-secondary btn-outline-success btn-block">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Sign up
+        </button>
+        <span *ngIf="error" class="text-danger text-center">{{error}}</span>
+      </form>
+      <div class="card-footer">
+        <p class="text-center font-weight-light mb-0">
+          I already have an account.
+          <a [routerLink]="['/login']">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+
+
+<!--<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card my-5 bg-light shadow-lg">
+      <form [formGroup]="registerForm" (submit)="onSubmit()">
+        <div class="card-header text-center">
+          <h2 class="card-title text-primary">Sign up</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input type="text" class="form-control" placeholder="Enter username" formControlName="userName" id="userName">
+            <span *ngIf="submitted && f.userName.errors" class="text-danger">
+              <span *ngIf="f.userName.errors.required">Username is required</span>
+              <span *ngIf="f.userName.errors.minlength">Min length is 4 symbols</span>
+              <span *ngIf="f.userName.errors.maxlength">Max length is 50 symbols</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" placeholder="Enter email" formControlName="email" id="email">
+            <span *ngIf="submitted && f.email.errors" class="text-danger">
+              <span *ngIf="f.email.errors.required">Email is required</span>
+              <span *ngIf="f.email.errors.email">Email format is incorrect</span>
+              <span *ngIf="f.email.errors.maxlength">Max length is 50 symbols</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" placeholder="Enter password" formControlName="password" id="password">
+            <span *ngIf="submitted && f.password.errors" class="text-danger">
+              <span *ngIf="f.password.errors.required">Password is required</span>
+              <span *ngIf="f.password.errors.minlength">Min length is 4 symbols</span>
+              <span *ngIf="f.password.errors.maxlength">Max length is 50 symbols</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Re-enter password</label>
+            <input type="password" class="form-control" placeholder="Enter password again" formControlName="confirmPassword" id="confirmPassword">
+            <span *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+              <span *ngIf="f.confirmPassword.errors.required">Password confirmation is required</span>
+              <span *ngIf="f.confirmPassword.errors.minlength">Min length is 4 symbols</span>
+              <span *ngIf="f.confirmPassword.errors.maxlength">Max length is 50 symbols</span>
+              <span *ngIf="f.confirmPassword.errors.mustmatch">Passwords are different</span>
+            </span>
+          </div>
+          <span *ngIf="error" class="text-danger">{{error}}</span>
+          <hr class="mx-4">
+          <div>
+            <p class="text-center font-weight-light mb-0">
+              I have an account.
+              <a [routerLink]="['/users/login']">Login here</a>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button [disabled]="loading" type="submit" class="btn btn-block btn-outline-secondary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Sign up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>-->

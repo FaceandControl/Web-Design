@@ -1,0 +1,9 @@
+.side-bar {
+  margin: 20px 0;
+}
+
+.active {
+  background: #1D2124 !important;
+  color: #fbfbfb !important;
+  border: none !important;
+}

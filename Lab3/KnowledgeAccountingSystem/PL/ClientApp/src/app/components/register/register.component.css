@@ -1,0 +1,18 @@
+.register-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+h5 {
+  margin: 0;
+}
+
+.custom-switch {
+    margin-top: 5px;
+}
